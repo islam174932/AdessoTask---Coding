@@ -1,0 +1,22 @@
+{
+  "name": "testproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "smoke": "cucumber-js --require-module ts-node/register --require features/support/world.ts --require features/support/hooks.ts --require features/step_definitions/smoke.steps.ts --tags @smoke features/*.feature",
+    "regression": "cucumber-js --require-module ts-node/register --require features/support/world.ts --require features/support/hooks.ts --require features/step_definitions/regression.steps.ts --tags @regression features/*.feature",
+    "test": "npm run smoke && npm run regression",
+    "test:parallel": "npm-run-all --parallel smoke regression",
+    "smoke:headless": "HEADLESS=true npm run smoke",
+    "regression:headless": "HEADLESS=true npm run regression",
+    "test:parallel:headless": "npm-run-all --parallel smoke:headless regression:headless"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.0.0",
+    "@playwright/test": "^1.0.0",
+    "playwright": "^1.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0",
+    "npm-run-all": "^4.1.5"
+  }
+}

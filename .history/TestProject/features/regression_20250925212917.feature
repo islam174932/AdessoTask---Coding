@@ -1,0 +1,53 @@
+
+Feature: Application Regression Test
+
+    Feature: Application Regression Test
+
+    Scenario: Add a new owner
+        Given I open the home page
+        When I click the Find Owners link
+        And I click the Add Owner button
+        And I enter owner details from JSON
+        And I submit the Add Owner form
+        Then I should see the new owner added
+
+    Scenario: Search for newly added owner and validate in owners table
+        Given I open the home page
+        When I click the Find Owners link
+        And I enter last name "Ibrahim" in the search field
+        And I click the Find Owner button
+        Then I should see the owner "Islam Ibrahim" with address "000 Pine Rd.", city "Cairo", and telephone "5551234567" in the owners table
+
+    Scenario: Update existing owner
+        Given I open the home page
+        When I click the Find Owners link
+        And I enter last name "Ibrahim" in the search field
+        And I click the Find Owner button
+        And I click the owner link "Islam Ibrahim" with address "000 Pine Rd."
+        And I click the Edit Owner button
+        And I update owner details from JSON
+        And I submit the Update Owner form
+        Then I should see the updated owner "Islam Ibrahim" with address "000 Pine Rd.", city "Cairo", and telephone "5551234567"
+
+    Scenario: Add a new pet to an owner
+        Given I open the home page
+        When I click the Find Owners link
+        And I enter last name "Ibrahim" in the search field
+        And I click the Find Owner button
+        And I click the owner link "Islam Ibrahim" with address "000 Pine Rd."
+        And I click the Add New Pet button
+        And I enter pet details from JSON
+        And I submit the Add Pet form
+    Then I should see the new pet "Rocky" with birth date "2023-01-01" and type "dog" for owner "Islam Ibrahim"
+
+    Scenario: Add a visit to a pet
+        Given I open the home page
+        When I click the Find Owners link
+        And I enter last name "Ibrahim" in the search field
+        And I click the Find Owner button
+        And I click the owner link "Islam Ibrahim" with address "000 Pine Rd."
+    And I click the pet name link "Rocky"
+        And I click the Add Visit button
+        And I enter visit details from JSON
+        And I submit the Add Visit form
+

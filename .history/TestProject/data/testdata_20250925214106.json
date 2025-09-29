@@ -1,0 +1,25 @@
+{
+  "owner": {
+    "firstName": "Omar",
+    "lastName": "Farouk",
+    "address": "000 Pine Rd.",
+    "city": "Cairo",
+    "telephone": "5551234567"
+  },
+  "updatedOwner": {
+    "firstName": "Layla",
+    "lastName": "Hassan",
+    "address": "123 Oak St.",
+    "city": "Giza",
+    "telephone": "5559876543"
+  },
+  "pet": {
+    "name": "Buddy",
+    "birthDate": "2023-11-01",
+    "type": "dog"
+  },
+  "visit": {
+    "date": "2025-09-25",
+    "description": "Annual checkup"
+  }
+}

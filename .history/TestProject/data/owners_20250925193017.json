@@ -1,0 +1,16 @@
+[
+  {
+    "firstName": "Bob",
+    "lastName": "Brown",
+    "address": "789 Pine Rd.",
+    "city": "Capital City",
+    "telephone": "5551112222"
+  },
+  {
+    "firstName": "Islam",
+    "lastName": "Ibrahim",
+    "address": "000 Pine Rd.",
+    "city": "Cairo",
+    "telephone": "5551234567"
+  }
+]

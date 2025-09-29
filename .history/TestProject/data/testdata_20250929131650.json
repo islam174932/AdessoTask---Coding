@@ -1,0 +1,57 @@
+{
+  "owners": [
+    {
+      "id": 0,
+      "firstName": "Islam",
+      "lastName": "Ibrahim",
+      "address": "000 Pine Rd.",
+      "city": "Cairo",
+      "telephone": "5551234567"
+    },
+    {
+      "id": 1,
+      "firstName": "Layla",
+      "lastName": "Hassan",
+      "address": "123 Oak St.",
+      "city": "Giza",
+      "telephone": "5559876543"
+    }
+  ],
+  "pets": [
+    {
+      "name": "Buddy",
+      "birthDate": "2023-11-01",
+      "type": "dog"
+    }
+  ],
+  "visits": [
+    {
+      "date": "2025-09-25",
+      "description": "Annual checkup"
+    }
+  ],
+  "testScenarios": {
+    "addOwner": {
+      "ownerIndex": 0
+    },
+    "searchOwner": {
+      "searchLastName": "Ibrahim",
+      "expectedOwnerIndex": 0
+    },
+    "updateOwner": {
+      "searchLastName": "Ibrahim",
+      "fromOwnerIndex": 0,
+      "toOwnerIndex": 1
+    },
+    "addPet": {
+      "searchLastName": "Hassan",
+      "ownerIndex": 1,
+      "petIndex": 0
+    },
+    "addVisit": {
+      "searchLastName": "Hassan",
+      "ownerIndex": 1,
+      "visitIndex": 0
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "owner": {
+    "firstName": "Islam",
+    "lastName": "Ibrahim",
+    "address": "000 Pine Rd.",
+    "city": "Cairo",
+    "telephone": "5551234567"
+  },
+  "pet": {
+    "name": "Rocky",
+    "birthDate": "2023-01-01",
+    "type": "dog"
+  },
+  "visit": {
+    "date": "2025-09-25",
+    "description": "Annual checkup"
+  }
+}

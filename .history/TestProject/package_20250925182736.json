@@ -1,0 +1,15 @@
+{
+  "name": "testproject",
+  "version": "1.0.0",
+
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js features/smoke.feature --import features/step_definitions/smoke.steps.ts --loader ts-node/esm"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.0.0",
+    "@playwright/test": "^1.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  }
+}

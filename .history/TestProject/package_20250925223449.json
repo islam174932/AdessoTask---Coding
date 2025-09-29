@@ -1,0 +1,16 @@
+{
+  "name": "testproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "smoke": "cucumber-js --require-module ts-node/register --require TestProject/features/support/world.ts --require TestProject/features/support/hooks.ts --require TestProject/features/step_definitions/*.ts --tags @smoke",
+    "regression": "cucumber-js --require-module ts-node/register --require TestProject/features/support/world.ts --require TestProject/features/support/hooks.ts --require TestProject/features/step_definitions/*.ts --tags @regression",
+    "test": "npm run smoke && npm run regression"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.0.0",
+    "@playwright/test": "^1.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  }
+}
