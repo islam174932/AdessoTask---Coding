@@ -31,6 +31,11 @@ When(
       (this as any).lastOwner = owner;
       (this as any).currentScenario = scenarioName;
 
+      await this.page!.screenshot({
+        path: "screenshots/before-form-fill.png",
+        fullPage: true,
+      });
+
       console.log("Filling firstName:", owner.firstName);
       await this.addOwnerPage!.firstNameInput().waitFor({
         state: "visible",
