@@ -1,5 +1,5 @@
 import { Before, After, BeforeAll, AfterAll, Status } from "@cucumber/cucumber";
-import { chromium, firefox, webkit, Browser, BrowserContext } from "playwright";
+import { chromium, Browser, BrowserContext } from "playwright";
 import { CustomWorld } from "./world";
 
 let browser: Browser;
@@ -7,33 +7,16 @@ let context: BrowserContext;
 
 BeforeAll(async function () {
   const isHeadless = process.env.HEADLESS === "true";
-  const browserType = process.env.BROWSER || "chromium"; // Default to chromium
 
-  console.log("🚀 Browser:", browserType, "- Headless:", isHeadless);
+  console.log("🚀 Browser mode - Headless:", isHeadless);
 
-  // Select browser based on environment variable
-  let browserInstance;
-  switch (browserType.toLowerCase()) {
-    case "firefox":
-      browserInstance = firefox;
-      break;
-    case "webkit":
-    case "safari":
-      browserInstance = webkit;
-      break;
-    case "chromium":
-    case "chrome":
-    default:
-      browserInstance = chromium;
-      break;
-  }
-
-  browser = await browserInstance.launch({
+  browser = await chromium.launch({
     headless: isHeadless,
-    slowMo: isHeadless ? 0 : 100,
+    slowMo: isHeadless ? 0 : 100, // ✅ Added missing comma
     args: ["--start-maximized", "--window-size=1366,768"],
   });
 
+  // ✅ Added the missing context initialization
   context = await browser.newContext({
     viewport: { width: 1366, height: 768 },
     screen: { width: 1366, height: 768 },
