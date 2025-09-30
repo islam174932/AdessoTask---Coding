@@ -3,20 +3,22 @@ import { Page, Locator, expect } from "@playwright/test";
 export class VetsPage {
   constructor(private readonly page: Page) {}
 
+  
   vetsNav(): Locator {
     return this.page.getByRole("link", { name: "Veterinarians" });
   }
 
   veterinariansLink(): Locator {
-    return this.vetsNav();
+  return this.vetsNav();
   }
 
+  
   vetsTable(): Locator {
     return this.page.locator("table#vets");
   }
 
   veterinariansTable(): Locator {
-    return this.page.locator("table");
+  return this.page.locator("table");
   }
 
   vetRows(): Locator {
@@ -24,7 +26,7 @@ export class VetsPage {
   }
 
   veterinarianRows(): Locator {
-    return this.page.locator("table tbody tr");
+  return this.page.locator("table tbody tr");
   }
 
   getVetRowByName(name: string): Locator {
@@ -35,6 +37,7 @@ export class VetsPage {
     return this.page.locator('a.fa-step-forward[title="Next"]');
   }
 
+  
   nameHeader(): Locator {
     return this.page.getByText("Name");
   }
@@ -47,7 +50,9 @@ export class VetsPage {
     return this.page.getByText("Specialty");
   }
 
+  
   async validateVetsTable() {
+    
     await expect(
       this.getVetRowByName("James Carter").getByText("none")
     ).toBeVisible();
@@ -76,6 +81,7 @@ export class VetsPage {
 
     await expect(this.nameHeader()).toBeVisible();
 
+    
     const specialtyHeaders = ["Specialties", "Specialty"];
     let headerFound = false;
 

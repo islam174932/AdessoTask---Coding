@@ -12,10 +12,13 @@ import { CustomWorld } from "../support/world";
 import * as fs from "fs";
 import * as path from "path";
 
+
 export async function loadJson(relativePath: string, currentDir: string) {
   const fullPath = path.resolve(currentDir, relativePath);
   return JSON.parse(fs.readFileSync(fullPath, "utf8"));
 }
+
+
 
 Given("I open the home page", async function (this: CustomWorld) {
   this.homePage = new HomePage(this.page!);

@@ -15,6 +15,7 @@ export class VisitPage {
     return this.page.locator('button[type="submit"]');
   }
   addVisitButton() {
+    
     return this.page
       .locator('a[href*="/visits/new"]:has-text("Add Visit")')
       .first();

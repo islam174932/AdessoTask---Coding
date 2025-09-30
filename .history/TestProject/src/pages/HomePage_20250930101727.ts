@@ -3,6 +3,7 @@ import { Page, Locator } from "@playwright/test";
 export class HomePage {
   constructor(private readonly page: Page) {}
 
+  
   homeNav(): Locator {
     return this.page.getByRole("link", { name: "Home" });
   }
@@ -13,6 +14,7 @@ export class HomePage {
       .first();
   }
 
+  
   welcomeHeader(): Locator {
     return this.page.getByRole("heading", { name: "Welcome" });
   }
@@ -25,10 +27,12 @@ export class HomePage {
     return this.page.locator("h1, h2, main, .container").first();
   }
 
+  
   async clickHome() {
     try {
       await this.homeNav().click();
     } catch (e) {
+      
       await this.homeIconFallback().click();
     }
   }

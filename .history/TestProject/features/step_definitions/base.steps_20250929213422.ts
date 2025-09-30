@@ -12,18 +12,18 @@ import { CustomWorld } from "../support/world";
 import * as fs from "fs";
 import * as path from "path";
 
+// Utility function
 export async function loadJson(relativePath: string, currentDir: string) {
   const fullPath = path.resolve(currentDir, relativePath);
   return JSON.parse(fs.readFileSync(fullPath, "utf8"));
 }
 
-Given("I open the home page", async function (this: CustomWorld) {
-  this.homePage = new HomePage(this.page!);
-  this.ownersPage = new OwnersPage(this.page!);
-  this.addOwnerPage = new AddOwnerPage(this.page!);
-  this.petPage = new PetPage(this.page!);
-  this.visitPage = new VisitPage(this.page!);
-  this.alertPage = new AlertPage(this.page!);
+// ==================== COMMON STEPS ====================
+
+Given("I open the home page", async function () {
+  this.homePage = new HomePage(this.page);
+  this.ownersPage = new OwnersPage(this.page);
+  this.addOwnerPage = new AddOwnerPage(this.page);
   await this.homePage.open();
   await this.homePage.waitForWelcome();
 });

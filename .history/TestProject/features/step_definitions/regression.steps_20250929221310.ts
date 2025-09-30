@@ -327,6 +327,7 @@ When(
     if (!pet)
       throw new Error(`No pet data found for scenario: ${scenarioName}`);
 
+    // Generate unique name using random words from JSON config
     const randomAdjective =
       nameConfig.adjectives[
         Math.floor(Math.random() * nameConfig.adjectives.length)
@@ -336,10 +337,12 @@ When(
         Math.floor(Math.random() * nameConfig.suffixes.length)
       ];
 
+    // Add additional randomness with a random number between selections to ensure uniqueness
     const randomIndex = Math.floor(Math.random() * 1000);
     const secondAdjective =
       nameConfig.adjectives[randomIndex % nameConfig.adjectives.length];
 
+    // Create truly unique name: BaseName_Adjective_Suffix OR BaseName_Adjective_Adjective_Suffix
     const useDoubleAdjective = Math.random() > 0.5;
     const uniqueName = useDoubleAdjective
       ? `${pet.name}_${randomAdjective}${secondAdjective}${randomSuffix}`

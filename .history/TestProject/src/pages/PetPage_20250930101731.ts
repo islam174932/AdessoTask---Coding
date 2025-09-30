@@ -24,7 +24,7 @@ export class PetPage {
   }
 
   petsTable(): Locator {
-    return this.page.locator("table").nth(1);
+  return this.page.locator("table").nth(1);
   }
 
   petNameLink(petName: string): Locator {

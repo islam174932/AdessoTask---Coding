@@ -327,6 +327,7 @@ When(
     if (!pet)
       throw new Error(`No pet data found for scenario: ${scenarioName}`);
 
+    
     const randomAdjective =
       nameConfig.adjectives[
         Math.floor(Math.random() * nameConfig.adjectives.length)
@@ -336,10 +337,12 @@ When(
         Math.floor(Math.random() * nameConfig.suffixes.length)
       ];
 
+    
     const randomIndex = Math.floor(Math.random() * 1000);
     const secondAdjective =
       nameConfig.adjectives[randomIndex % nameConfig.adjectives.length];
 
+    
     const useDoubleAdjective = Math.random() > 0.5;
     const uniqueName = useDoubleAdjective
       ? `${pet.name}_${randomAdjective}${secondAdjective}${randomSuffix}`

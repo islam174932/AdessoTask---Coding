@@ -3,10 +3,12 @@ import { expect, Locator, Page } from "@playwright/test";
 export class OwnersPage {
   constructor(private readonly page: Page) {}
 
+  
   findOwnersNav(): Locator {
     return this.page.getByRole("link", { name: "Find owners" });
   }
 
+  
   lastNameInput(): Locator {
     return this.page.locator('input[name="lastName"]');
   }
@@ -15,6 +17,7 @@ export class OwnersPage {
     return this.page.getByRole("button", { name: "Find Owner" });
   }
 
+  
   ownersTable(): Locator {
     return this.page.locator("table#owners");
   }
@@ -39,6 +42,7 @@ export class OwnersPage {
     return this.page.locator('a.btn.btn-primary:has-text("Edit Owner")');
   }
 
+  
   nameHeader(): Locator {
     return this.page.getByText("Name");
   }
@@ -55,6 +59,7 @@ export class OwnersPage {
     return this.page.getByText("Telephone");
   }
 
+  
   async validateDavisOwners() {
     await this.page.waitForSelector("table", {
       state: "visible",
