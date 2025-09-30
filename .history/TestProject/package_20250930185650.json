@@ -9,7 +9,6 @@
     "test:parallel": "npm-run-all --parallel smoke regression",
     "smoke:headless": "cross-env HEADLESS=true npm run smoke",
     "regression:headless": "cross-env HEADLESS=true npm run regression",
-    "test:headless": "cross-env HEADLESS=true npm run test",
     "test:parallel:headless": "npm-run-all --parallel smoke:headless regression:headless"
   },
   "devDependencies": {
